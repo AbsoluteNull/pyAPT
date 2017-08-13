@@ -48,7 +48,7 @@ atomLabels = ['In','Cd','S','Ga','Se','Cu']
 IL = options.IL
 
 #x  = np.array([float(d) for d in allList[0] ])
-x = list((np.array(range(np.shape(allList)[1]))- IL)*5)
+x = list((np.array(range(np.shape(allList)[1]))- IL)*0.4)
 
 fig,(ax1)=plt.subplots(1,1)
 
@@ -113,7 +113,14 @@ handles = [h[0] for h in handles]
 # use them in the legend
 ax1.legend(handles, labels, loc='upper left',numpoints=1)
 
+###-----Plot concentration profiles -------------------
+#plt.legend()
 plt.show()
+fig.savefig(filenames[0].split('.')[0]+'-CPall.svg',dpi=fig.dpi)
+fig.savefig(filenames[0].split('.')[0]+'-CPall.pdf',dpi=fig.dpi)
+fig.savefig(filenames[0].split('.')[0]+'-CPall.png',dpi=fig.dpi)
+#plt.show()
+
 
 print('################################################################')
 print('                     END                                        ')
